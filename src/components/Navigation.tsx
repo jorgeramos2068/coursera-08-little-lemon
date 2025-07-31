@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Cherry } from 'lucide-react';
 
 const Navigation: React.FC = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark" role="navigation" aria-label="Main navigation">
       <div className="container">
         <Link className="navbar-brand" to="/" aria-label="Little Lemon Home">
-          🍋 Little Lemon
+          <Cherry size={24} color="#FFD700" className="me-2" aria-hidden="true" />
+          Little Lemon
         </Link>
         <button
           className="navbar-toggler"

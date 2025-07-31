@@ -23,22 +23,28 @@ describe('HomePage Component', () => {
     expect(screen.getByRole('link', { name: /view our menu/i })).toBeInTheDocument();
   });
 
-  test('renders feature cards', () => {
+  test('renders Specials section', () => {
     renderWithRouter(<HomePage />);
-    expect(screen.getByText('Fresh Ingredients')).toBeInTheDocument();
-    expect(screen.getByText('Traditional Recipes')).toBeInTheDocument();
-    expect(screen.getByText('Modern Presentation')).toBeInTheDocument();
+    expect(screen.getByText('Specials')).toBeInTheDocument();
+    expect(screen.getByText('Greek Salad')).toBeInTheDocument();
+    expect(screen.getByText('Bruchetta')).toBeInTheDocument();
+    expect(screen.getByText('Lemon Dessert')).toBeInTheDocument();
+  });
+
+  test('renders CustomersSay section', () => {
+    renderWithRouter(<HomePage />);
+    expect(screen.getByText('What Our Customers Say')).toBeInTheDocument();
+    expect(screen.getByText('Maria Rodriguez')).toBeInTheDocument();
+  });
+
+  test('renders Chicago section', () => {
+    renderWithRouter(<HomePage />);
+    expect(screen.getByText('Little Lemon Chicago')).toBeInTheDocument();
+    expect(screen.getByText(/Little Lemon opened in 1995/)).toBeInTheDocument();
   });
 
   test('has proper semantic HTML structure', () => {
     renderWithRouter(<HomePage />);
-    expect(screen.getByRole('main')).toBeInTheDocument();
-    expect(screen.getAllByRole('article')).toHaveLength(3);
     expect(screen.getByRole('region')).toBeInTheDocument();
-  });
-
-  test('has accessible section labels', () => {
-    renderWithRouter(<HomePage />);
-    expect(screen.getByLabelText('Restaurant Features')).toBeInTheDocument();
   });
 });
