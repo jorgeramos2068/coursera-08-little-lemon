@@ -16,10 +16,10 @@ describe('CallToAction Component', () => {
     expect(heading.tagName).toBe('H1');
   });
 
-  test('renders the SVG logo with proper accessibility', () => {
+  test('renders the Lucide icon logo with proper accessibility', () => {
     renderWithRouter(<CallToAction />);
 
-    const logo = screen.getByRole('img', { name: /little lemon restaurant logo/i });
+    const logo = screen.getByLabelText(/little lemon restaurant logo/i);
     expect(logo).toBeInTheDocument();
     expect(logo.tagName).toBe('svg');
   });
