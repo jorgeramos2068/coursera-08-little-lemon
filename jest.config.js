@@ -19,4 +19,7 @@ module.exports = {
   moduleNameMapping: {
     '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
   },
+  moduleNameMapper: {
+    '^react-router-dom$': '<rootDir>/node_modules/react-router-dom',
+  },
 };

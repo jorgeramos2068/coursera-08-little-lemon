@@ -1,11 +1,6 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import { BrowserRouter } from 'react-router-dom';
+import { screen } from '@testing-library/react';
 import CallToAction from '../CallToAction';
-
-const renderWithRouter = (component: React.ReactElement) => {
-  return render(<BrowserRouter>{component}</BrowserRouter>);
-};
+import { renderWithRouter } from '../../tests';
 
 describe('CallToAction Component', () => {
   test('renders the main heading', () => {
@@ -24,20 +19,12 @@ describe('CallToAction Component', () => {
     expect(logo.tagName).toBe('svg');
   });
 
-  test('renders the home page link', () => {
+  test('renders the booking page link', () => {
     renderWithRouter(<CallToAction />);
 
-    const homeLink = screen.getByRole('link', { name: /go to little lemon home page/i });
-    expect(homeLink).toBeInTheDocument();
-    expect(homeLink).toHaveAttribute('href', '/');
-  });
-
-  test('renders the menu link', () => {
-    renderWithRouter(<CallToAction />);
-
-    const menuLink = screen.getByRole('link', { name: /view our menu/i });
-    expect(menuLink).toBeInTheDocument();
-    expect(menuLink).toHaveAttribute('href', '/menu');
+    const bookingLink = screen.getByRole('button', { name: /book a table at little lemon restaurant/i });
+    expect(bookingLink).toBeInTheDocument();
+    expect(bookingLink).toHaveAttribute('href', '/booking');
   });
 
   test('has proper semantic structure', () => {
@@ -58,13 +45,10 @@ describe('CallToAction Component', () => {
     expect(screen.getByText(/fresh, locally-sourced ingredients/i)).toBeInTheDocument();
   });
 
-  test('has accessible button labels', () => {
+  test('has accessible button label', () => {
     renderWithRouter(<CallToAction />);
 
-    const homeButton = screen.getByRole('link', { name: /go to little lemon home page/i });
-    const menuButton = screen.getByRole('link', { name: /view our menu/i });
-
-    expect(homeButton).toHaveAttribute('aria-label', 'Go to Little Lemon home page');
-    expect(menuButton).toHaveAttribute('aria-label', 'View our menu');
+    const bookingButton = screen.getByRole('button', { name: /book a table at little lemon restaurant/i });
+    expect(bookingButton).toHaveAttribute('aria-label', 'Book a table at Little Lemon restaurant');
   });
 });

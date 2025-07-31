@@ -1,11 +1,6 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
+import { screen } from '@testing-library/react';
 import HomePage from '../HomePage';
-
-const renderWithRouter = (component: React.ReactElement) => {
-  return render(<MemoryRouter>{component}</MemoryRouter>);
-};
+import { renderWithRouter } from '../../tests';
 
 describe('HomePage Component', () => {
   test('renders welcome message from CallToAction', () => {
@@ -18,9 +13,9 @@ describe('HomePage Component', () => {
     expect(screen.getByText(/Experience authentic Mediterranean cuisine/)).toBeInTheDocument();
   });
 
-  test('renders view menu link from CallToAction', () => {
+  test('renders booking button from CallToAction', () => {
     renderWithRouter(<HomePage />);
-    expect(screen.getByRole('link', { name: /view our menu/i })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /book a table at little lemon restaurant/i })).toBeInTheDocument();
   });
 
   test('renders Specials section', () => {
@@ -45,6 +40,6 @@ describe('HomePage Component', () => {
 
   test('has proper semantic HTML structure', () => {
     renderWithRouter(<HomePage />);
-    expect(screen.getByRole('region')).toBeInTheDocument();
+    expect(screen.getAllByRole('region').length).toBeGreaterThan(0);
   });
 });

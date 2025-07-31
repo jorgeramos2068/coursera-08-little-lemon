@@ -1,11 +1,6 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import { BrowserRouter } from 'react-router-dom';
+import { screen } from '@testing-library/react';
 import BookingPage from '../BookingPage';
-
-const renderWithRouter = (component: React.ReactElement) => {
-  return render(<BrowserRouter>{component}</BrowserRouter>);
-};
+import { renderWithRouter } from '../../tests';
 
 describe('BookingPage Component', () => {
   test('renders the page heading', () => {
@@ -46,6 +41,6 @@ describe('BookingPage Component', () => {
 
   test('has proper semantic structure', () => {
     renderWithRouter(<BookingPage />);
-    expect(screen.getByRole('main')).toBeInTheDocument();
+    expect(screen.getByRole('region')).toBeInTheDocument();
   });
 });

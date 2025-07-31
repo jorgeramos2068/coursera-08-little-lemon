@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 import BookingForm from './BookingForm';
 import { BookingFormData } from '../interfaces/booking';
 import { submitAPI } from '../helpers/booking';

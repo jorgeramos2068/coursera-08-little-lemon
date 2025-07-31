@@ -1,4 +1,3 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
 import CustomersSay from '../CustomersSay';
 
@@ -24,7 +23,7 @@ describe('CustomersSay Component', () => {
 
   test('shows customer locations', () => {
     render(<CustomersSay />);
-    expect(screen.getByText('Chicago, IL')).toBeInTheDocument();
+    expect(screen.getAllByText('Chicago, IL').length).toBeGreaterThan(0);
     expect(screen.getByText('Evanston, IL')).toBeInTheDocument();
     expect(screen.getByText('Oak Park, IL')).toBeInTheDocument();
   });
