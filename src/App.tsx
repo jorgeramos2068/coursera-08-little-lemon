@@ -6,7 +6,7 @@ import './App.css';
 
 export const App: React.FC = () => {
   return (
-    <main className="app container mt-5">
+    <main className="app">
       <Navigation />
       <Routes>
         <Route path="/" element={<HomePage />} />
