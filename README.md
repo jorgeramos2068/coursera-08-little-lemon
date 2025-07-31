@@ -1,6 +1,31 @@
-# Getting Started with Create React App
+# Little Lemon Restaurant
+
+A Mediterranean restaurant website built with React 19, TypeScript, and Bootstrap 5.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Features
+
+- ✅ **React 19** with **TypeScript** support
+- ✅ **React Router** for navigation with initial home route
+- ✅ **Bootstrap 5** integrated via CDN
+- ✅ **Jest and React Testing Library** configuration
+- ✅ **Node.js v22.17.1** specified in `.nvmrc`
+
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── __tests__/
+│   │   └── Home.test.tsx
+│   ├── Home.tsx
+│   └── Navigation.tsx
+├── App.tsx
+├── App.test.tsx
+├── App.css
+└── index.tsx
+```
 
 ## Available Scripts
 
