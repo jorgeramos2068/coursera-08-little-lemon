@@ -8,19 +8,19 @@ const renderWithRouter = (component: React.ReactElement) => {
 };
 
 describe('Home Component', () => {
-  test('renders welcome message', () => {
+  test('renders welcome message from CallToAction', () => {
     renderWithRouter(<Home />);
     expect(screen.getByText('Welcome to Little Lemon')).toBeInTheDocument();
   });
 
-  test('renders restaurant description', () => {
+  test('renders CallToAction component content', () => {
     renderWithRouter(<Home />);
-    expect(screen.getByText(/Mediterranean restaurant focused on traditional recipes/)).toBeInTheDocument();
+    expect(screen.getByText(/Experience authentic Mediterranean cuisine/)).toBeInTheDocument();
   });
 
-  test('renders view menu button', () => {
+  test('renders view menu link from CallToAction', () => {
     renderWithRouter(<Home />);
-    expect(screen.getByRole('button', { name: /view menu/i })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /view our menu/i })).toBeInTheDocument();
   });
 
   test('renders feature cards', () => {
@@ -33,8 +33,8 @@ describe('Home Component', () => {
   test('has proper semantic HTML structure', () => {
     renderWithRouter(<Home />);
     expect(screen.getByRole('main')).toBeInTheDocument();
-    expect(screen.getByRole('banner')).toBeInTheDocument();
     expect(screen.getAllByRole('article')).toHaveLength(3);
+    expect(screen.getByRole('region')).toBeInTheDocument();
   });
 
   test('has accessible section labels', () => {
