@@ -1,15 +1,15 @@
 import React from 'react';
-import BookingForm from '../components/BookingForm';
+import Main from '../components/Main';
 
 const BookingPage: React.FC = () => {
   return (
     <>
-      <main className="bg-light min-vh-100">
+      <section className="bg-light min-vh-100">
         <div className="container py-5">
           <div className="row">
             <div className="col-12">
               <div className="text-center mb-5">
-                <h1 className="display-4 fw-bold text-primary mb-3">Reserve Your Table</h1>
+                <h1 className="display-4 fw-bold text-secondary mb-3">Reserve Your Table</h1>
                 <p className="lead text-muted">
                   Book your dining experience at Little Lemon and enjoy authentic Mediterranean cuisine in our welcoming
                   atmosphere.
@@ -18,7 +18,7 @@ const BookingPage: React.FC = () => {
             </div>
           </div>
 
-          <BookingForm />
+          <Main />
 
           <div className="row mt-5">
             <div className="col-12">
@@ -37,7 +37,7 @@ const BookingPage: React.FC = () => {
             </div>
           </div>
         </div>
-      </main>
+      </section>
     </>
   );
 };

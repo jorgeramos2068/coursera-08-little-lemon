@@ -1,14 +1,6 @@
 import React from 'react';
 import { Star, Quote } from 'lucide-react';
-
-interface Testimonial {
-  id: number;
-  name: string;
-  rating: number;
-  review: string;
-  image: string;
-  location: string;
-}
+import { Testimonial } from '../interfaces/common';
 
 const testimonials: Testimonial[] = [
   {

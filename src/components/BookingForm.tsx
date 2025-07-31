@@ -1,39 +1,14 @@
 import React from 'react';
+import { BookingFormData } from '../interfaces/booking';
 
-interface BookingFormData {
-  date: string;
-  time: string;
-  guests: number;
-  occasion: string;
+interface Props {
+  availableTimes: string[];
+  formData: BookingFormData;
+  handleInputChange: (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void;
+  handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
 }
 
-const BookingForm: React.FC = () => {
-  const [availableTimes] = React.useState<string[]>(['17:00', '18:00', '19:00', '20:00', '21:00', '22:00']);
-
-  const [formData, setFormData] = React.useState<BookingFormData>({
-    date: '',
-    time: availableTimes[0],
-    guests: 1,
-    occasion: 'Birthday',
-  });
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: name === 'guests' ? parseInt(value) || 1 : value,
-    }));
-  };
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log('Reservation submitted:', formData);
-    // Here you would typically send the data to your backend
-    alert(
-      `Reservation submitted for ${formData.guests} guest(s) on ${formData.date} at ${formData.time} for ${formData.occasion}`
-    );
-  };
-
+const BookingForm: React.FC<Props> = ({ availableTimes, formData, handleInputChange, handleSubmit }) => {
   return (
     <section className="py-5" aria-labelledby="booking-heading">
       <div className="container">

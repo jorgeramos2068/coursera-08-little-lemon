@@ -1,15 +1,6 @@
 import React from 'react';
 import { Star, Clock, DollarSign } from 'lucide-react';
-
-interface Special {
-  id: number;
-  name: string;
-  price: number;
-  description: string;
-  image: string;
-  prepTime: string;
-  rating: number;
-}
+import { Special } from '../interfaces/common';
 
 const specials: Special[] = [
   {

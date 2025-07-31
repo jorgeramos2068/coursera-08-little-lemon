@@ -2,7 +2,6 @@
   min-height: 100vh;
 }
 
-/* Custom styles for Little Lemon */
 .jumbotron {
   background: linear-gradient(135deg, #495e57 0%, #f4ce14 100%);
 }
@@ -17,7 +16,6 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* Little Lemon brand colors */
 :root {
   --primary-green: #495e57;
   --primary-yellow: #f4ce14;
