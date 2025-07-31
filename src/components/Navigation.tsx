@@ -30,7 +30,7 @@ const Navigation: React.FC = () => {
             </li>
             <li className="nav-item" role="none">
               <Link className="nav-link" to="/booking" role="menuitem">
-                Booking a table
+                Book a table
               </Link>
             </li>
           </ul>

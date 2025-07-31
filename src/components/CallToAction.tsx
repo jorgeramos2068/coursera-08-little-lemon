@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Cherry, Home } from 'lucide-react';
+import { Cherry, Calendar } from 'lucide-react';
 
 const CallToAction: React.FC = () => {
   return (
@@ -23,21 +23,13 @@ const CallToAction: React.FC = () => {
                 </p>
                 <div className="d-grid gap-2 d-md-flex justify-content-md-center">
                   <Link
-                    to="/"
-                    className="btn btn-warning btn-lg px-4 me-md-2"
+                    to="/booking"
+                    className="btn btn-warning btn-lg px-4"
                     role="button"
-                    aria-label="Go to Little Lemon home page"
+                    aria-label="Book a table at Little Lemon restaurant"
                   >
-                    <Home size={20} className="me-2" aria-hidden="true" />
-                    Visit Our Home
-                  </Link>
-                  <Link
-                    to="/menu"
-                    className="btn btn-outline-light btn-lg px-4"
-                    role="button"
-                    aria-label="View our menu"
-                  >
-                    View Menu
+                    <Calendar size={20} className="me-2" aria-hidden="true" />
+                    Book a Table
                   </Link>
                 </div>
               </div>
