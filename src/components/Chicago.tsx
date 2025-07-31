@@ -1,5 +1,6 @@
 import React from 'react';
 import { MapPin, Users, Award } from 'lucide-react';
+import { createImageErrorHandler } from '../helpers/functions';
 
 const Chicago: React.FC = () => {
   const [imageErrors, setImageErrors] = React.useState({
@@ -8,9 +9,7 @@ const Chicago: React.FC = () => {
     brothers: false,
   });
 
-  const handleImageError = (imageKey: keyof typeof imageErrors) => {
-    setImageErrors(prev => ({ ...prev, [imageKey]: true }));
-  };
+  const handleImageError = createImageErrorHandler(setImageErrors);
 
   return (
     <section className="py-5" aria-labelledby="chicago-heading">

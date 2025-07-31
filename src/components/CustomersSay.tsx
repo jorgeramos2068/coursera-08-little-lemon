@@ -1,52 +1,12 @@
 import React from 'react';
 import { Star, Quote } from 'lucide-react';
-import { Testimonial } from '../interfaces/common';
-
-const testimonials: Testimonial[] = [
-  {
-    id: 1,
-    name: 'Maria Rodriguez',
-    rating: 5,
-    review:
-      "The food was absolutely amazing! The Greek salad was fresh and the flavors were incredible. I'll definitely be coming back with my family.",
-    image: '/images/customer-maria.jpg',
-    location: 'Chicago, IL',
-  },
-  {
-    id: 2,
-    name: 'John Thompson',
-    rating: 5,
-    review:
-      'Best Mediterranean restaurant in Chicago! The atmosphere is perfect for a romantic dinner and the staff is so welcoming. Highly recommended!',
-    image: '/images/customer-john.jpg',
-    location: 'Evanston, IL',
-  },
-  {
-    id: 3,
-    name: 'Sarah Chen',
-    rating: 4,
-    review:
-      "Love this place! The lemon dessert is to die for. It really does taste like it came from grandma's kitchen. Great service too!",
-    image: '/images/customer-sarah.jpg',
-    location: 'Oak Park, IL',
-  },
-  {
-    id: 4,
-    name: 'Michael Johnson',
-    rating: 5,
-    review:
-      'Little Lemon has become our go-to spot for special occasions. The food is consistently excellent and the ambiance is just perfect.',
-    image: '/images/customer-michael.jpg',
-    location: 'Chicago, IL',
-  },
-];
+import { testimonials } from '../helpers/data';
+import { createNumberImageErrorHandler } from '../helpers/functions';
 
 const CustomersSay: React.FC = () => {
   const [imageErrors, setImageErrors] = React.useState<{ [key: number]: boolean }>({});
 
-  const handleImageError = (id: number) => {
-    setImageErrors(prev => ({ ...prev, [id]: true }));
-  };
+  const handleImageError = createNumberImageErrorHandler(setImageErrors);
 
   const renderStars = (rating: number) => {
     return Array.from({ length: 5 }, (_, index) => (

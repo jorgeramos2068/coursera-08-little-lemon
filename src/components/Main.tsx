@@ -1,23 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import BookingForm from './BookingForm';
-import { BookingFormData, UpdateTimesAction } from '../interfaces/booking';
-import { fetchAPI, submitAPI } from '../helpers/booking';
-
-const initializeTimes = (): string[] => {
-  const today = new Date();
-  return fetchAPI(today);
-};
-
-const updateTimes = (state: string[], action: UpdateTimesAction): string[] => {
-  switch (action.type) {
-    case 'UPDATE_TIMES':
-      const selectedDate = new Date(action.payload);
-      return fetchAPI(selectedDate);
-    default:
-      return state;
-  }
-};
+import { BookingFormData } from '../interfaces/booking';
+import { submitAPI } from '../helpers/booking';
+import { initializeTimes, updateTimes } from '../helpers/functions';
 
 const Main: React.FC = () => {
   const navigate = useNavigate();

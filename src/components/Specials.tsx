@@ -1,46 +1,12 @@
 import React from 'react';
 import { Star, Clock, DollarSign } from 'lucide-react';
-import { Special } from '../interfaces/common';
-
-const specials: Special[] = [
-  {
-    id: 1,
-    name: 'Greek Salad',
-    price: 12.99,
-    description:
-      'The famous Greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons.',
-    image: '/images/greek-salad.jpg',
-    prepTime: '10 min',
-    rating: 4.8,
-  },
-  {
-    id: 2,
-    name: 'Bruchetta',
-    price: 5.99,
-    description:
-      'Our Bruschetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil.',
-    image: '/images/bruchetta.jpg',
-    prepTime: '5 min',
-    rating: 4.6,
-  },
-  {
-    id: 3,
-    name: 'Lemon Dessert',
-    price: 5.0,
-    description:
-      "This comes straight from grandma's recipe book, every last ingredient has been sourced and is as authentic as can be imagined.",
-    image: '/images/lemon-dessert.jpg',
-    prepTime: '15 min',
-    rating: 4.9,
-  },
-];
+import { specials } from '../helpers/data';
+import { createNumberImageErrorHandler } from '../helpers/functions';
 
 const Specials: React.FC = () => {
   const [imageErrors, setImageErrors] = React.useState<{ [key: number]: boolean }>({});
 
-  const handleImageError = (id: number) => {
-    setImageErrors(prev => ({ ...prev, [id]: true }));
-  };
+  const handleImageError = createNumberImageErrorHandler(setImageErrors);
 
   return (
     <section className="py-5" aria-labelledby="specials-heading">
