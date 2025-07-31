@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 const Navigation: React.FC = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark" role="navigation" aria-label="Main navigation">
       <div className="container">
-        <Link className="navbar-brand" to="/">
+        <Link className="navbar-brand" to="/" aria-label="Little Lemon Home">
           🍋 Little Lemon
         </Link>
         <button
@@ -15,29 +15,29 @@ const Navigation: React.FC = () => {
           data-bs-target="#navbarNav"
           aria-controls="navbarNav"
           aria-expanded="false"
-          aria-label="Toggle navigation"
+          aria-label="Toggle navigation menu"
         >
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav ms-auto">
-            <li className="nav-item">
-              <Link className="nav-link" to="/">
+          <ul className="navbar-nav ms-auto" role="menubar">
+            <li className="nav-item" role="none">
+              <Link className="nav-link" to="/" role="menuitem">
                 Home
               </Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/menu">
+            <li className="nav-item" role="none">
+              <Link className="nav-link" to="/menu" role="menuitem">
                 Menu
               </Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/about">
+            <li className="nav-item" role="none">
+              <Link className="nav-link" to="/about" role="menuitem">
                 About
               </Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/contact">
+            <li className="nav-item" role="none">
+              <Link className="nav-link" to="/contact" role="menuitem">
                 Contact
               </Link>
             </li>

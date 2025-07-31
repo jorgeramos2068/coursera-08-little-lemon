@@ -22,3 +22,24 @@ test('renders welcome message on home page', () => {
   const welcomeElement = screen.getByText(/welcome to little lemon/i);
   expect(welcomeElement).toBeInTheDocument();
 });
+
+test('has proper semantic structure with navigation', () => {
+  render(
+    <MemoryRouter>
+      <App />
+    </MemoryRouter>
+  );
+  expect(screen.getByRole('navigation')).toBeInTheDocument();
+  expect(screen.getByRole('banner')).toBeInTheDocument();
+  expect(screen.getByRole('main')).toBeInTheDocument();
+});
+
+test('navigation has accessible labels', () => {
+  render(
+    <MemoryRouter>
+      <App />
+    </MemoryRouter>
+  );
+  expect(screen.getByLabelText('Main navigation')).toBeInTheDocument();
+  expect(screen.getByLabelText('Little Lemon Home')).toBeInTheDocument();
+});

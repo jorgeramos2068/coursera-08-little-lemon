@@ -4,11 +4,7 @@ import { MemoryRouter } from 'react-router-dom';
 import Home from '../Home';
 
 const renderWithRouter = (component: React.ReactElement) => {
-  return render(
-    <MemoryRouter>
-      {component}
-    </MemoryRouter>
-  );
+  return render(<MemoryRouter>{component}</MemoryRouter>);
 };
 
 describe('Home Component', () => {
@@ -32,5 +28,17 @@ describe('Home Component', () => {
     expect(screen.getByText('Fresh Ingredients')).toBeInTheDocument();
     expect(screen.getByText('Traditional Recipes')).toBeInTheDocument();
     expect(screen.getByText('Modern Presentation')).toBeInTheDocument();
+  });
+
+  test('has proper semantic HTML structure', () => {
+    renderWithRouter(<Home />);
+    expect(screen.getByRole('main')).toBeInTheDocument();
+    expect(screen.getByRole('banner')).toBeInTheDocument();
+    expect(screen.getAllByRole('article')).toHaveLength(3);
+  });
+
+  test('has accessible section labels', () => {
+    renderWithRouter(<Home />);
+    expect(screen.getByLabelText('Restaurant Features')).toBeInTheDocument();
   });
 });

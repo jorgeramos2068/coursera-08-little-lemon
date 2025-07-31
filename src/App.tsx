@@ -4,42 +4,44 @@ import Navigation from './components/Navigation';
 import Home from './components/Home';
 import './App.css';
 
-function App() {
+export const App: React.FC = () => {
   return (
-    <div className="App">
+    <main className="app container mt-5">
       <Navigation />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route
           path="/menu"
           element={
-            <div className="container mt-5">
+            <section>
               <h1>Menu Page</h1>
               <p>Coming soon...</p>
-            </div>
+            </section>
           }
         />
         <Route
           path="/about"
           element={
-            <div className="container mt-5">
-              <h1>About Page</h1>
-              <p>Coming soon...</p>
-            </div>
+            <main className="container mt-5">
+              <section>
+                <h1>About Page</h1>
+                <p>Coming soon...</p>
+              </section>
+            </main>
           }
         />
         <Route
           path="/contact"
           element={
-            <div className="container mt-5">
+            <section>
               <h1>Contact Page</h1>
               <p>Coming soon...</p>
-            </div>
+            </section>
           }
         />
       </Routes>
-    </div>
+    </main>
   );
-}
+};
 
 export default App;
