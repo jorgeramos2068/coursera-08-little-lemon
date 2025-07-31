@@ -5,10 +5,14 @@ interface Props {
   availableTimes: string[];
   formData: BookingFormData;
   handleInputChange: (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void;
-  handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
+  submitForm: (formData: BookingFormData) => void;
 }
 
-const BookingForm: React.FC<Props> = ({ availableTimes, formData, handleInputChange, handleSubmit }) => {
+const BookingForm: React.FC<Props> = ({ availableTimes, formData, handleInputChange, submitForm }) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    submitForm(formData);
+  };
   return (
     <section className="py-5" aria-labelledby="booking-heading">
       <div className="container">
