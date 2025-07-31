@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { MapPin, Users, Award } from 'lucide-react';
 
 const Chicago: React.FC = () => {
-  const [imageErrors, setImageErrors] = useState({
+  const [imageErrors, setImageErrors] = React.useState({
     interior: false,
     chef: false,
     brothers: false,

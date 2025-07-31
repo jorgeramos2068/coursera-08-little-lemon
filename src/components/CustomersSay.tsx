@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Star, Quote } from 'lucide-react';
 
 interface Testimonial {
@@ -50,7 +50,7 @@ const testimonials: Testimonial[] = [
 ];
 
 const CustomersSay: React.FC = () => {
-  const [imageErrors, setImageErrors] = useState<{ [key: number]: boolean }>({});
+  const [imageErrors, setImageErrors] = React.useState<{ [key: number]: boolean }>({});
 
   const handleImageError = (id: number) => {
     setImageErrors(prev => ({ ...prev, [id]: true }));

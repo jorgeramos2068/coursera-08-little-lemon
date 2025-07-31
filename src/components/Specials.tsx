@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Star, Clock, DollarSign } from 'lucide-react';
 
 interface Special {
@@ -45,7 +45,7 @@ const specials: Special[] = [
 ];
 
 const Specials: React.FC = () => {
-  const [imageErrors, setImageErrors] = useState<{ [key: number]: boolean }>({});
+  const [imageErrors, setImageErrors] = React.useState<{ [key: number]: boolean }>({});
 
   const handleImageError = (id: number) => {
     setImageErrors(prev => ({ ...prev, [id]: true }));

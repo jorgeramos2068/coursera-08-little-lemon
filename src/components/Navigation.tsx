@@ -29,18 +29,8 @@ const Navigation: React.FC = () => {
               </Link>
             </li>
             <li className="nav-item" role="none">
-              <Link className="nav-link" to="/menu" role="menuitem">
-                Menu
-              </Link>
-            </li>
-            <li className="nav-item" role="none">
-              <Link className="nav-link" to="/about" role="menuitem">
-                About
-              </Link>
-            </li>
-            <li className="nav-item" role="none">
-              <Link className="nav-link" to="/contact" role="menuitem">
-                Contact
+              <Link className="nav-link" to="/booking" role="menuitem">
+                Booking a table
               </Link>
             </li>
           </ul>
