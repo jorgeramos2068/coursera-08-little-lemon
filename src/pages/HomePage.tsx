@@ -1,7 +1,7 @@
 import React from 'react';
-import CallToAction from './CallToAction';
+import CallToAction from '../components/CallToAction';
 
-const Home: React.FC = () => {
+const HomePage: React.FC = () => {
   return (
     <>
       <CallToAction />
@@ -40,4 +40,4 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home;
+export default HomePage;

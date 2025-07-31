@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Navigation from './components/Navigation';
-import Home from './components/Home';
+import HomePage from './pages/HomePage';
 import './App.css';
 
 export const App: React.FC = () => {
@@ -9,7 +9,7 @@ export const App: React.FC = () => {
     <main className="app container mt-5">
       <Navigation />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<HomePage />} />
         <Route
           path="/menu"
           element={
